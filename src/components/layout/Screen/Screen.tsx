@@ -1,7 +1,6 @@
+import { PropsWithChildren } from "react";
 import * as S from "./styles";
 
-export const Screen = () => (
-    <S.Container>
-        <h1>Hello</h1>
-    </S.Container>
+export const Screen = ({ children }: PropsWithChildren) => (
+    <S.Container>{children}</S.Container>
 );
