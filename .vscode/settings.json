@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "layout",
         "typography",
-        "forms"
+        "forms",
+        "reset-password"
     ]
 }

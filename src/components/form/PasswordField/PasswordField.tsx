@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { ChangeEvent, useCallback } from "react";
 import { PasswordFieldProps } from "./types";
 import * as S from "./styles";
 
 export const PasswordField = ({
     label,
     name,
+    onChange,
     ...props
 }: PasswordFieldProps) => {
-    const [value, setValue] = useState<string>();
+    const handleChange = useCallback(
+        ({ target }: ChangeEvent<HTMLInputElement>) => onChange(target.value),
+        [onChange]
+    );
 
     return (
         <S.Container>
             <S.Label htmlFor={name}>{label}</S.Label>
-            <S.Input {...{ ...props, name }} />
+            <S.Input
+                {...{ ...props, name, type: "password" }}
+                onChange={handleChange}
+            />
         </S.Container>
     );
 };

@@ -1,5 +1,9 @@
 import { HTMLProps } from "react";
 
-export interface PasswordFieldProps extends HTMLProps<HTMLInputElement> {
+export type PasswordFieldProps = Omit<
+    HTMLProps<HTMLInputElement>,
+    "onChange"
+> & {
     label: string;
-}
+    onChange: (value: string) => void;
+};
