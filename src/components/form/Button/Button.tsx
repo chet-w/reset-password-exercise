@@ -10,5 +10,9 @@ const BUTTON_TYPES = {
 export const Button = ({ type, children, ...props }: ButtonProps) => {
     const Component = useMemo(() => BUTTON_TYPES[type], [type]);
 
-    return <Component {...props}>{children}</Component>;
+    return (
+        <Component type="button" {...props}>
+            {children}
+        </Component>
+    );
 };

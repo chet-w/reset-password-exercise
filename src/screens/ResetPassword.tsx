@@ -1,7 +1,6 @@
 import { Screen } from "../components/layout";
 import { Heading, Paragraph } from "../components/typography";
 import { Button, Form, PasswordField } from "../components/form";
-import { PasswordRequirements } from "./components/PasswordRequirements";
 import { useMemo, useState } from "react";
 import { validatePassword } from "./helpers";
 
@@ -36,7 +35,6 @@ export const ResetPassword = () => {
                     value={confirmedPassword}
                     onChange={setConfirmedPassword}
                 />
-                <PasswordRequirements />
                 <Button
                     id="SetPasswordBtn"
                     type="primary"
