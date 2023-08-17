@@ -25,7 +25,7 @@ export const Row = styled.div`
 `;
 
 export const Toggle = styled.button`
-    background: #541e4b;
+    background: ${({ theme }) => theme.primary};
     border: none;
     padding: 0.25rem;
     border-radius: 0.25rem;

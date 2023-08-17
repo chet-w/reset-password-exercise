@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 
 const BaseButton = styled.button`
     padding: 1rem 2rem;
-    color: #ffffff;
+    color: ${({ theme }) => theme.white};
     border-radius: 0.5rem;
     border: solid 2px transparent;
     font-weight: 600;
@@ -14,11 +14,12 @@ const BaseButton = styled.button`
 `;
 
 export const Primary = styled(BaseButton)`
-    background: ${({ disabled }) => (disabled ? "#bbbbbb" : "#541e4b")};
+    background: ${({ disabled, theme }) =>
+        disabled ? theme.grey : theme.primary};
 `;
 
 export const Secondary = styled(BaseButton)`
-    background: #ffffff;
-    color: #541e4b;
-    border: solid 2px #541e4b;
+    background: ${({ theme }) => theme.white};
+    color: ${({ theme }) => theme.primary};
+    border: solid 2px ${({ theme }) => theme.primary};
 `;
