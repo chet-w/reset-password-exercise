@@ -1,5 +1,5 @@
 import { Screen } from "../components/layout";
-import { Heading } from "../components/typography";
+import { Heading, Paragraph } from "../components/typography";
 
 export const ResetPassword = () => (
     <Screen>
