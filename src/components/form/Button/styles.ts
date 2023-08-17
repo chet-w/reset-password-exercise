@@ -6,6 +6,11 @@ const BaseButton = styled.button`
     border-radius: 0.5rem;
     border: solid 2px transparent;
     font-weight: 600;
+    cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
+
+    &:hover {
+        filter: brightness(1.1);
+    }
 `;
 
 export const Primary = styled(BaseButton)`

@@ -3,6 +3,7 @@ import { Heading, Paragraph } from "../components/typography";
 import { Button, Form, PasswordField } from "../components/form";
 import { useMemo, useState } from "react";
 import { validatePassword } from "./helpers";
+import * as S from "./styles";
 
 export const ResetPassword = () => {
     const [password, setPassword] = useState<string>();
@@ -21,6 +22,10 @@ export const ResetPassword = () => {
     return (
         <Screen>
             <Form>
+                <S.Logo
+                    src="https://bank.westpac.co.nz/wone/images/logo-westpac-w.svg"
+                    alt="Westpac"
+                />
                 <Heading type="page">Reset your password</Heading>
                 <Paragraph>
                     Set a new password by filling out the form.

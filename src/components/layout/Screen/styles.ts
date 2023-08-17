@@ -6,4 +6,5 @@ export const Container = styled.main`
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("https://bank.westpac.co.nz/images/login/bg-left-mobile.svg");
 `;

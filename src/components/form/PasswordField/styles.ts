@@ -29,4 +29,9 @@ export const Toggle = styled.button`
     border: none;
     padding: 0.25rem;
     border-radius: 0.25rem;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
 `;
