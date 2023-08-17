@@ -2,11 +2,16 @@ import { Screen } from "../components/layout";
 import { Heading, Paragraph } from "../components/typography";
 import { Button, Form, PasswordField } from "../components/form";
 import { PasswordRequirements } from "./components/PasswordRequirements";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export const ResetPassword = () => {
     const [password, setPassword] = useState<string>();
     const [confirmedPassword, setConfirmedPassword] = useState<string>();
+
+    const isSubmissionEnabled = useMemo(
+        () => password && password === confirmedPassword,
+        [confirmedPassword, password]
+    );
 
     return (
         <Screen>
@@ -26,7 +31,13 @@ export const ResetPassword = () => {
                     onChange={setConfirmedPassword}
                 />
                 <PasswordRequirements />
-                <Button type="primary">Set password</Button>
+                <Button
+                    id="SetPasswordBtn"
+                    type="primary"
+                    disabled={!isSubmissionEnabled}
+                >
+                    Set password
+                </Button>
             </Form>
         </Screen>
     );

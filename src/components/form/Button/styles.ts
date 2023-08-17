@@ -9,7 +9,7 @@ const BaseButton = styled.button`
 `;
 
 export const Primary = styled(BaseButton)`
-    background: #541e4b;
+    background: ${({ disabled }) => (disabled ? "#bbbbbb" : "#541e4b")};
 `;
 
 export const Secondary = styled(BaseButton)`

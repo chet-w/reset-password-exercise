@@ -7,8 +7,8 @@ const BUTTON_TYPES = {
     secondary: S.Secondary,
 } as const;
 
-export const Button = ({ type, children }: ButtonProps) => {
+export const Button = ({ type, children, ...props }: ButtonProps) => {
     const Component = useMemo(() => BUTTON_TYPES[type], [type]);
 
-    return <Component>{children}</Component>;
+    return <Component {...props}>{children}</Component>;
 };
